@@ -15,9 +15,10 @@
 
 **Note**: Please send link to this repo when you are done.
 
-### Ho w to run
+### How to run
 
-```mvn clean test```
+```mvn clean test -Denv=prod```
+
 
 - [x] ability to run tests for different browsers/os by configuring;
 - [x] ability to run tests for different environments(urls) by configuring/by command-line.
