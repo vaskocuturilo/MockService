@@ -6,7 +6,7 @@ import static info.testengineer.base.BaseApi.HTTP_PORT;
 /**
  * The type Mock service.
  */
-public class MockService {
+public class MockApiService {
 
     /**
      * The constant SUCCESS.
@@ -16,7 +16,7 @@ public class MockService {
     /**
      * Default constructor.
      */
-    public MockService() {
+    public MockApiService() {
         super();
         //empty
         return;

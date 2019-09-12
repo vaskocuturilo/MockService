@@ -1,7 +1,7 @@
 package info.testengineer.base;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
-import info.testengineer.mock.MockService;
+import info.testengineer.mock.MockApiService;
 import io.restassured.RestAssured;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -41,8 +41,8 @@ public class BaseApi {
         mWireMockServer = new WireMockServer(options().port(HTTP_PORT));
         mWireMockServer.start();
 
-        final MockService mockService = new MockService();
-        mockService.startMockService();
+        final MockApiService mockApiService = new MockApiService();
+        mockApiService.startMockService();
 
         RestAssured.baseURI = BASE_CONFIG.getApiUrl();
 

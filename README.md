@@ -36,8 +36,8 @@
 **List of technologies**: Java 8, Gradle, Selenide, Junit, Rest-assured, Jetty, WireMock, H2, PageObject.
 **Note**: You should have installed Chrome browser, Gradle.
 
-![]()
+![](https://d.radikal.ru/d01/1909/39/adb6d7514223.png)
 
-![]()
+![](https://a.radikal.ru/a41/1909/17/b59769e8b755.png)
 
-![]()
+![](https://a.radikal.ru/a04/1909/2c/11976e3a38b0.png)
