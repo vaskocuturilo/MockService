@@ -5,6 +5,7 @@
         <packages>
             <package name="info.testengineer.web.*"/>
             <package name="info.testengineer.api.*"/>
+            <package name="info.testengineer.dataset.*"/>
         </packages>
     </test>
 </suite>
