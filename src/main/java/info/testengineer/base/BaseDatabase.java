@@ -15,6 +15,15 @@ import static info.testengineer.mock.MockDatabaseService.deleteTable;
 public class BaseDatabase {
 
     /**
+     * Default constructor.
+     */
+    public BaseDatabase() {
+        super();
+        //empty
+        return;
+    }
+
+    /**
      * Before test.
      */
     @BeforeSuite

@@ -5,6 +5,7 @@ import static io.restassured.RestAssured.given;
 /**
  * The type GetRequest.
  */
+@SuppressWarnings("PMD.LawOfDemeter")
 public final class GetRequest {
 
     /**

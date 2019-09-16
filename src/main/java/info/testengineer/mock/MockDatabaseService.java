@@ -14,13 +14,14 @@ import java.util.logging.Logger;
 /**
  * The type Mock database service.
  */
+@SuppressWarnings("PMD.UseUtilityClass")
 public class MockDatabaseService {
 
 
-    private static final String DATABASE_DRIVER = "org.h2.Driver";
-    private static final String DATABASE_CONNECTION = "jdbc:h2:tcp://localhost/~/test";
-    private static final String DATABASE_USER = "sa";
-    private static final String DATABASE_PASSWORD = "qatester";
+    private static final String BASE_DRIVER = "org.h2.Driver";
+    private static final String BASE_CONN = "jdbc:h2:tcp://localhost/~/test";
+    private static final String BASE_USER = "sa";
+    private static final String BASE_PASS = "qatester";
 
     /**
      * The constant LOG.
@@ -98,12 +99,12 @@ public class MockDatabaseService {
         Connection h2DBConnection = null;
 
         try {
-            Class.forName(DATABASE_DRIVER);
+            Class.forName(BASE_DRIVER);
         } catch (ClassNotFoundException ex) {
             LOG.info(ex.toString());
         }
         try {
-            h2DBConnection = DriverManager.getConnection(DATABASE_CONNECTION, DATABASE_USER, DATABASE_PASSWORD);
+            h2DBConnection = DriverManager.getConnection(BASE_CONN, BASE_USER, BASE_PASS);
 
             return h2DBConnection;
         } catch (SQLException ex) {
