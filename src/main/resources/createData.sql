@@ -4,3 +4,6 @@
                lastname varchar(100), 
                department varchar(100),
                location varchar(10));
+
+INSERT INTO WORKERS(firstname, lastname, department, location)
+           VALUES ('Vasko', 'Cuturilo','Automation','Poland');

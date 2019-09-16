@@ -42,7 +42,7 @@ public class MockDatabaseService {
      */
     public static void createTable() throws SQLException {
 
-        final String absPath = new File("src/main/resources/create.sql").getAbsolutePath();
+        final String absPath = new File("src/main/resources/createData.sql").getAbsolutePath();
 
         final Connection connection = getDBConnection();
 
@@ -63,12 +63,11 @@ public class MockDatabaseService {
         LOG.info("Successfully Created WORKERS Table!");
     }
 
-
     /**
      * Delete table.
      */
     public static void deleteTable() throws SQLException {
-        final String absPath = new File("src/main/resources/drop.sql").getAbsolutePath();
+        final String absPath = new File("src/main/resources/dropData.sql").getAbsolutePath();
 
         final Connection connection = getDBConnection();
 
