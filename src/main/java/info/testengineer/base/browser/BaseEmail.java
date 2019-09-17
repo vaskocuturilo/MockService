@@ -13,7 +13,7 @@ public class BaseEmail {
     /**
      * The private value emailService.
      */
-    protected MockEmailService emailService = new MockEmailService();
+    private MockEmailService emailService = new MockEmailService();
 
     /**
      * Default constructor.
@@ -29,7 +29,7 @@ public class BaseEmail {
      */
     @BeforeTest(alwaysRun = true)
     public void beforeTest() {
-        emailService.start();
+        emailService.startEmailServer(9010);
     }
 
     /**

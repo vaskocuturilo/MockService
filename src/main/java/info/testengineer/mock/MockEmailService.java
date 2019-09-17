@@ -40,11 +40,11 @@ public class MockEmailService {
     }
 
     /**
-     * Start.
+     * Method startEmailServer.
+     *
+     * @param port this is port for mail server.
      */
-    public void start() {
-
-        final int port = 9010;
+    public void startEmailServer(final int port) {
         smtpServer = new SMTPServer(new SimpleMessageListenerAdapter(new SimpleMessageListener() {
             @Override
             public boolean accept(final String from, final String recipient) {

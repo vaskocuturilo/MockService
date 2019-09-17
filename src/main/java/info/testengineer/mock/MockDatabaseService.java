@@ -10,17 +10,29 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.logging.Logger;
 
-
 /**
  * The type Mock database service.
  */
-@SuppressWarnings("PMD.UseUtilityClass")
-public class MockDatabaseService {
+public final class MockDatabaseService {
 
-
+    /**
+     * The constant BASE_DRIVER.
+     */
     private static final String BASE_DRIVER = "org.h2.Driver";
+
+    /**
+     * The constant BASE_CONN.
+     */
     private static final String BASE_CONN = "jdbc:h2:tcp://localhost/~/test";
+
+    /**
+     * The constant BASE_USER.
+     */
     private static final String BASE_USER = "sa";
+
+    /**
+     * The constant BASE_PASS.
+     */
     private static final String BASE_PASS = "qatester";
 
     /**
@@ -31,7 +43,7 @@ public class MockDatabaseService {
     /**
      * Default constructor.
      */
-    public MockDatabaseService() {
+    private MockDatabaseService() {
         super();
         //empty
         return;
@@ -39,6 +51,8 @@ public class MockDatabaseService {
 
     /**
      * Create table.
+     *
+     * @throws SQLException for method.
      */
     public static void createTable() throws SQLException {
 
@@ -65,6 +79,8 @@ public class MockDatabaseService {
 
     /**
      * Delete table.
+     *
+     * @throws SQLException for method.
      */
     public static void deleteTable() throws SQLException {
         final String absPath = new File("src/main/resources/dropData.sql").getAbsolutePath();

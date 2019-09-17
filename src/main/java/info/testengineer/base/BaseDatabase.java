@@ -25,6 +25,8 @@ public class BaseDatabase {
 
     /**
      * Before test.
+     *
+     * @throws SQLException for method.
      */
     @BeforeSuite
     public void beforeTest() throws SQLException {
@@ -35,6 +37,8 @@ public class BaseDatabase {
 
     /**
      * After test.
+     *
+     * @throws SQLException for method.
      */
     @AfterSuite(alwaysRun = true)
     public void afterTest() throws SQLException {
