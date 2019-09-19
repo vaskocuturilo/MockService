@@ -30,12 +30,25 @@ public final class DataProviders {
      *
      * @return the object [ ] [ ]
      */
-    @DataProvider(name = "inCorrectLogin")
-    public static Object[][] inCorrectLogin() {
+    @DataProvider(name = "incorrectLogin")
+    public static Object[][] incorrectLogin() {
         return new Object[][]{
                 {"admin", "test"},
                 {"@@@@@@", "########"},
                 {"3245235", "23523626"}
+        };
+    }
+
+
+    /**
+     * User data for adoption object [ ] [ ].
+     *
+     * @return the object [ ] [ ]
+     */
+    @DataProvider(name = "userDataForAdoption")
+    public static Object[][] userDataForAdoption() {
+        return new Object[][]{
+                {"Anton Smirnov", "Hello world Street", "12345", "test@test.com"}
         };
     }
 
