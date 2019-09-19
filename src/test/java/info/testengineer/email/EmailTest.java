@@ -1,6 +1,6 @@
 package info.testengineer.email;
 
-import info.testengineer.base.browser.BaseEmail;
+import info.testengineer.base.BaseEmail;
 import io.qameta.allure.Story;
 import org.testng.annotations.Test;
 

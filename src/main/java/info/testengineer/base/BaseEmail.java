@@ -1,4 +1,4 @@
-package info.testengineer.base.browser;
+package info.testengineer.base;
 
 import info.testengineer.mock.MockEmailService;
 import org.testng.annotations.AfterTest;

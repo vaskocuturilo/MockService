@@ -8,7 +8,7 @@ import org.testng.annotations.Parameters;
 
 import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
-import static info.testengineer.base.browser.Browsers.selectBrowser;
+import static info.testengineer.browser.Browsers.selectBrowser;
 import static info.testengineer.webconfig.WebConfig.BASE_CONFIG;
 
 /**

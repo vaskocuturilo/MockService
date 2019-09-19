@@ -1,4 +1,4 @@
-package info.testengineer.base.browser;
+package info.testengineer.browser;
 
 import com.codeborne.selenide.Configuration;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
