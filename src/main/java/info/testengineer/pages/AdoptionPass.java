@@ -54,7 +54,7 @@ public class AdoptionPass {
      * @param userEmail    the user email
      * @return the adoption pass
      */
-    public AdoptionPass addAdoptionData(final String userName,
+    public final AdoptionPass addAdoptionData(final String userName,
                                         final String userAddress,
                                         final String userPostCode,
                                         final String userEmail) {
