@@ -32,12 +32,23 @@ public class WebTest extends AbstractPage {
     }
 
     @Test(dataProvider = "userDataForAdoption", dataProviderClass = DataProviders.class)
-    @Story("Check pass adoption")
+    @Story("Check pass adoption.")
     public void testCheckPassAdoption(String name, String address, String postCode, String email) {
         openPage("testing.html");
         new TestingPage()
                 .selectSortBy(StartDate.TODAY)
                 .selectAdoptionPass()
                 .addAdoptionData(name, address, postCode, email);
+    }
+
+
+    @Test
+    @Story("Check fail adoption.")
+    public void testCheckFailAdoption() {
+        openPage("testing.html");
+        new TestingPage()
+                .selectSortBy(StartDate.TOMORROW)
+                .selectAdoptionFail()
+                .checkAdoptionFail();
     }
 }

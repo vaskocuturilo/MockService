@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
 /**
  * The class Adoption pass.
  */
-public class AdoptionPass {
+public class AdoptionPassPage {
 
     /**
      * The constant ASSERT_TEXT.
@@ -39,7 +39,7 @@ public class AdoptionPass {
     /**
      * Constructor.
      */
-    public AdoptionPass() {
+    public AdoptionPassPage() {
         super();
         //empty
         return;
@@ -54,10 +54,10 @@ public class AdoptionPass {
      * @param userEmail    the user email
      * @return the adoption pass
      */
-    public final AdoptionPass addAdoptionData(final String userName,
-                                        final String userAddress,
-                                        final String userPostCode,
-                                        final String userEmail) {
+    public final AdoptionPassPage addAdoptionData(final String userName,
+                                                  final String userAddress,
+                                                  final String userPostCode,
+                                                  final String userEmail) {
         conText.shouldHave(Condition.text(TEXT));
         name.setValue(userName);
         address.setValue(userAddress);

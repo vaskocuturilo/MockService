@@ -20,7 +20,8 @@ public class TestingPage {
      */
     private final transient SelenideElement
             selectDate = $("select[id='start_select']"),
-            adoptionCheck = $("input[id='check_second_btn']");
+            adoptionFail = $("input[id='check_first_btn']"),
+            adoptionPass = $("input[id='check_second_btn']");
 
     /**
      * The constructor.
@@ -49,11 +50,23 @@ public class TestingPage {
      *
      * @return Adoption Pass.
      */
-    public AdoptionPass selectAdoptionPass() {
+    public AdoptionPassPage selectAdoptionPass() {
 
-        adoptionCheck.click();
+        adoptionPass.click();
 
-        return new AdoptionPass();
+        return new AdoptionPassPage();
+    }
+
+    /**
+     * Method select Adoption Fail.
+     *
+     * @return Adoption Fail.
+     */
+    public AdoptionFailPage selectAdoptionFail() {
+
+        adoptionFail.click();
+
+        return new AdoptionFailPage();
     }
 
 
