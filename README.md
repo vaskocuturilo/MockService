@@ -33,7 +33,7 @@
 
 ```mvn allure:serve```
 
-**List of technologies**: Java 8, Gradle, Selenide, Junit, Rest-assured, Jetty, WireMock, H2, PageObject.
+**List of technologies**: Java 8, Maven, Selenide, TestNG, Rest-assured, Jetty, WireMock, H2, PageObject.
 **Note**: You should have installed Chrome browser, Gradle.
 
 ![](https://d.radikal.ru/d01/1909/39/adb6d7514223.png)
