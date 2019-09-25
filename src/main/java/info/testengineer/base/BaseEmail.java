@@ -11,6 +11,11 @@ import org.testng.annotations.BeforeTest;
 public class BaseEmail {
 
     /**
+     * The constant PORT.
+     */
+    private static final int PORT = 9010;
+
+    /**
      * The private value emailService.
      */
     private MockEmailService emailService = new MockEmailService();
@@ -29,7 +34,7 @@ public class BaseEmail {
      */
     @BeforeTest(alwaysRun = true)
     public void beforeTest() {
-        emailService.startEmailServer(9010);
+        emailService.startEmailServer(PORT);
     }
 
     /**
