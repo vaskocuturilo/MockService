@@ -2,10 +2,7 @@ package info.testengineer.web;
 
 import info.testengineer.data.DataProviders;
 import info.testengineer.listener.LogListener;
-import info.testengineer.pages.AbstractPage;
-import info.testengineer.pages.LoginPage;
-import info.testengineer.pages.StartDate;
-import info.testengineer.pages.TestingPage;
+import info.testengineer.pages.*;
 import io.qameta.allure.Story;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -51,4 +48,17 @@ public class WebTest extends AbstractPage {
                 .selectAdoptionFail()
                 .checkAdoptionFail();
     }
+
+    @Test(dataProvider = "userDataForAdoption", dataProviderClass = DataProviders.class)
+    @Story("Check contact form.")
+    public void testContactForm(String name, String address, String postCode, String email) {
+        openPage("contact.html");
+        new ContactPage()
+                .addContactInformation(name, address, postCode, email)
+                .selectContactType(Buttons.INFORMATION)
+                .checkedInformationType(InformationType.VOLUNTEER)
+                .sendMessage()
+                .checkThatMessageSentDone();
+    }
+
 }
