@@ -16,7 +16,7 @@ public enum InformationType {
 
     private String type;
 
-    InformationType(String selectType) {
+    InformationType(final String selectType) {
         this.type = selectType;
     }
 

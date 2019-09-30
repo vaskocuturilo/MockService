@@ -29,6 +29,14 @@ public class ContactConfirmPage {
             content = $("td[class='content'] h1"),
             backLink = $("tr[class='head'] a");
 
+    /**
+     * The default constructor.
+     */
+    public ContactConfirmPage() {
+        super();
+        //empty
+        return;
+    }
 
     /**
      * Check that message sent done contact confirm page.
@@ -38,6 +46,7 @@ public class ContactConfirmPage {
     public ContactConfirmPage checkThatMessageSentDone() {
 
         content.waitUntil(Condition.visible, DELAY).shouldHave(Condition.text(TEXT));
+        backLink.click();
 
 
         return this;

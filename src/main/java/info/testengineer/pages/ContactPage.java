@@ -22,6 +22,15 @@ public class ContactPage {
             send = $("input[id='submit_message']");
 
     /**
+     * The default constructor.
+     */
+    public ContactPage() {
+        super();
+        //empty
+        return;
+    }
+
+    /**
      * Method select Contact Type.
      *
      * @param buttons the buttons
@@ -53,7 +62,10 @@ public class ContactPage {
      * @param email    this is user email.
      * @return the search page.
      */
-    public ContactPage addContactInformation(String name, String address, String postCode, String email) {
+    public ContactPage addContactInformation(final String name,
+                                             final String address,
+                                             final String postCode,
+                                             final String email) {
 
         userName.setValue(name);
         userAddress.setValue(address);

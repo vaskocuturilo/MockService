@@ -27,7 +27,7 @@ public enum Buttons {
     /**
      * The constructor.
      */
-    Buttons(String selectButton) {
+    Buttons(final String selectButton) {
         this.button = selectButton;
     }
 
