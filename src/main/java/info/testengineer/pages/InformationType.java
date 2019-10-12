@@ -14,8 +14,14 @@ public enum InformationType {
      */
     NEWSLETTER("cadop");
 
+    /**
+     * The private value type.
+     */
     private String type;
 
+    /**
+     * The constructor.
+     */
     InformationType(final String selectType) {
         this.type = selectType;
     }

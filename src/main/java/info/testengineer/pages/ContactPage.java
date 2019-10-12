@@ -77,6 +77,8 @@ public class ContactPage {
 
     /**
      * Method sendMessage.
+     *
+     * @return this.
      */
     public ContactConfirmPage sendMessage() {
         send.click();

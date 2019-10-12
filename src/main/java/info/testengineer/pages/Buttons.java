@@ -26,6 +26,8 @@ public enum Buttons {
 
     /**
      * The constructor.
+     *
+     * @param selectButton this is value select button.
      */
     Buttons(final String selectButton) {
         this.button = selectButton;
