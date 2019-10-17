@@ -21,6 +21,8 @@ public enum InformationType {
 
     /**
      * The constructor.
+     *
+     * @param selectType thi is value selectType for selectors from drop-down list on Contact Page.
      */
     InformationType(final String selectType) {
         this.type = selectType;
