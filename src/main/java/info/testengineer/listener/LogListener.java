@@ -12,6 +12,10 @@ import org.testng.ITestResult;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+
+/**
+ * The class Log listener.
+ */
 public class LogListener implements ITestListener {
     private ByteArrayOutputStream request = new ByteArrayOutputStream();
     private ByteArrayOutputStream response = new ByteArrayOutputStream();
