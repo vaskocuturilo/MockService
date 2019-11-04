@@ -1,9 +1,7 @@
 package info.testengineer.base;
 
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
+import info.testengineer.listener.AllureScreenShooter;
+import org.testng.annotations.*;
 
 import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
@@ -14,6 +12,7 @@ import static info.testengineer.webconfig.WebConfig.BASE_CONFIG;
 /**
  * The type Base web.
  */
+@Listeners(AllureScreenShooter.class)
 public class BaseWeb  {
 
     /**
