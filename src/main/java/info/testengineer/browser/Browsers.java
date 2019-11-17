@@ -23,11 +23,9 @@ public final class Browsers {
      */
     public static void selectBrowser(final String browser) {
         if ("chrome".equalsIgnoreCase(browser)) {
-            Configuration.browser = "Chrome";
-            ChromeDriverManager.getInstance(DriverManagerType.CHROME).setup();
+            Configuration.browser = Chrome.class.getName();
         } else if ("firefox".equalsIgnoreCase(browser)) {
-            Configuration.browser = "firefox";
-            ChromeDriverManager.getInstance(DriverManagerType.FIREFOX).setup();
+            Configuration.browser = Firefox.class.getName();
         } else if ("opera".equalsIgnoreCase(browser)) {
             Configuration.browser = "opera";
             ChromeDriverManager.getInstance(DriverManagerType.OPERA).setup();
