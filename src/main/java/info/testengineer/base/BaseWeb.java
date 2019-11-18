@@ -1,5 +1,8 @@
 package info.testengineer.base;
 
+import com.codeborne.selenide.Configuration;
+import info.testengineer.browser.Remote;
+import info.testengineer.environment.Environment;
 import info.testengineer.listener.AllureScreenShooter;
 import org.testng.annotations.*;
 
@@ -13,7 +16,7 @@ import static info.testengineer.webconfig.WebConfig.BASE_CONFIG;
  * The type Base web.
  */
 @Listeners(AllureScreenShooter.class)
-public class BaseWeb  {
+public class BaseWeb {
 
     /**
      * Instantiates a new Base info.testengineer.web.
@@ -33,8 +36,13 @@ public class BaseWeb  {
     @BeforeTest
     public void beforeTest(@Optional("chrome") final String browser) {
         baseUrl = BASE_CONFIG.getWebUrl();
-        selectBrowser(browser);
-        clearBrowserCache();
+        if (Environment.isCheckOperationSystem()) {
+            Configuration.browser = Remote.class.getName();
+        } else {
+            selectBrowser(browser);
+            clearBrowserCache();
+
+        }
     }
 
     /**
