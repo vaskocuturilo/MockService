@@ -39,7 +39,6 @@ public class BaseWeb {
         } else {
             selectBrowser(browser);
             clearBrowserCache();
-
         }
     }
 

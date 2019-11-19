@@ -1,14 +1,17 @@
 package info.testengineer.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import com.google.gson.Gson;
+import info.testengineer.util.PropertiesReader;
 
 import static com.codeborne.selenide.Selenide.$;
+import static java.lang.String.format;
 
 
 /**
  * The type Contact page.
  */
-public class ContactPage {
+public class ContactPage extends UserData {
 
     /**
      * The private Selenide Element.
@@ -56,21 +59,15 @@ public class ContactPage {
     /**
      * Method add Contact Information.
      *
-     * @param name     this is user name.
-     * @param address  this is user address.
-     * @param postCode this is user postcode.
-     * @param email    this is user email.
-     * @return the search page.
+     * @param registerData this is string name of json file.
      */
-    public ContactPage addContactInformation(final String name,
-                                             final String address,
-                                             final String postCode,
-                                             final String email) {
+    public ContactPage addContactInformation(final String registerData) {
+        final UserData userData = getJsonData(registerData);
 
-        userName.setValue(name);
-        userAddress.setValue(address);
-        userPostcode.setValue(postCode);
-        userEmail.setValue(email);
+        userName.setValue(userData.getName());
+        userAddress.setValue(userData.getAddress());
+        userPostcode.setValue(userData.getPostcode());
+        userEmail.setValue(userData.getEmail());
 
         return this;
     }
@@ -86,5 +83,16 @@ public class ContactPage {
         return new ContactConfirmPage();
     }
 
+    /**
+     * Method get Json Data.
+     *
+     * @param jsonFileName path to file.
+     * @return new Gson.
+     */
+    private static UserData getJsonData(final String jsonFileName) {
 
+        final String pathToFolder = PropertiesReader.getResourceAsString(format("user/%s.json", jsonFileName));
+
+        return new Gson().fromJson(pathToFolder, UserData.class);
+    }
 }

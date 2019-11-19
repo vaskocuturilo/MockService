@@ -49,12 +49,12 @@ public class WebTest extends AbstractPage {
                 .checkAdoptionFail();
     }
 
-    @Test(dataProvider = "userDataForAdoption", dataProviderClass = DataProviders.class)
+    @Test
     @Story("Check contact form.")
-    public void testContactForm(String name, String address, String postCode, String email) {
+    public void testContactForm() {
         openPage("contact.html");
         new ContactPage()
-                .addContactInformation(name, address, postCode, email)
+                .addContactInformation("userData")
                 .selectContactType(Buttons.INFORMATION)
                 .checkedInformationType(InformationType.VOLUNTEER)
                 .sendMessage()
