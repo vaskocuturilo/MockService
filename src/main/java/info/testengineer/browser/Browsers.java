@@ -32,6 +32,8 @@ public final class Browsers {
         } else if ("edge".equalsIgnoreCase(browser)) {
             Configuration.browser = "edge";
             ChromeDriverManager.getInstance(DriverManagerType.EDGE).setup();
+        } else if ("remote".equalsIgnoreCase(browser)) {
+            Configuration.browser = Remote.class.getName();
         } else {
             throw new IllegalStateException(" Browser " + browser + " not supported in this tests. ");
         }
