@@ -1,7 +1,5 @@
 package info.testengineer.base;
 
-import com.codeborne.selenide.Configuration;
-import info.testengineer.browser.Remote;
 import info.testengineer.environment.Environment;
 import info.testengineer.listener.AllureScreenShooter;
 import org.testng.annotations.*;
