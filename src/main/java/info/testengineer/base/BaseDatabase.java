@@ -28,7 +28,7 @@ public class BaseDatabase {
      *
      * @throws SQLException for method.
      */
-    @BeforeSuite
+    @BeforeSuite(enabled = false)
     public void beforeTest() throws SQLException {
         createTable();
 
@@ -40,7 +40,7 @@ public class BaseDatabase {
      *
      * @throws SQLException for method.
      */
-    @AfterSuite(alwaysRun = true)
+    @AfterSuite(alwaysRun = true, enabled = false)
     public void afterTest() throws SQLException {
         deleteTable();
     }
