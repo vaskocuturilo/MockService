@@ -20,7 +20,7 @@ public class Chrome implements WebDriverProvider {
     /**
      * The constant LOG.
      */
-    private final static Logger LOG = Logger.getLogger(Chrome.class.getName());
+    private static final Logger LOG = Logger.getLogger(Chrome.class.getName());
 
     /**
      * The default constructor.

@@ -34,7 +34,7 @@ public class BaseWeb {
     @BeforeTest
     public void beforeTest(@Optional("chrome") final String browser) {
         baseUrl = BASE_CONFIG.getWebUrl();
-        if (Environment.isCheckOperationSystem()) {
+        if (Environment.isCheckOperatingSystem()) {
             selectBrowser("remote");
         } else {
             selectBrowser(browser);

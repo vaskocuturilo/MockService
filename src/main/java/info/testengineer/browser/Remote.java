@@ -8,11 +8,18 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.logging.Logger;
 
 /**
  * The class Remote.
  */
 public class Remote implements WebDriverProvider {
+
+    /**
+     * The constant LOGGER.
+     */
+    private static final Logger LOGGER = Logger.getLogger(Remote.class.getName());
+
     @Override
     public WebDriver createDriver(DesiredCapabilities capabilities) {
 
@@ -22,9 +29,9 @@ public class Remote implements WebDriverProvider {
         capabilities.setCapability("screenResolution", "1920x1080x24");
 
         try {
-            return new RemoteWebDriver(getGridHubUrl(), capabilities);
+            return new RemoteWebDriver(getSelenoidUrl(), capabilities);
         } catch (Exception ex) {
-            ex.printStackTrace();
+            LOGGER.info("This is " + ex);
         }
         return null;
     }
@@ -32,12 +39,12 @@ public class Remote implements WebDriverProvider {
     /**
      * The private method for run Grid .
      */
-    private static URL getGridHubUrl() {
+    private static URL getSelenoidUrl() {
         URL hostURL = null;
         try {
             hostURL = new URL(System.getProperty("selenoid.url", "http://127.0.0.1:4444/wd/hub"));
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
+        } catch (MalformedURLException ex) {
+            LOGGER.info("This is " + ex);
         }
         return hostURL;
     }
