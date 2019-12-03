@@ -1,13 +1,10 @@
 package info.testengineer.web;
 
 import info.testengineer.data.DataProviders;
-import info.testengineer.listener.AllureScreenShooter;
 import info.testengineer.pages.*;
 import io.qameta.allure.Story;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-@Listeners(AllureScreenShooter.class)
 public class WebTest extends AbstractPage {
 
     @Test(dataProvider = "correctLogin", dataProviderClass = DataProviders.class)

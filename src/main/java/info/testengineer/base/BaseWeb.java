@@ -1,7 +1,8 @@
 package info.testengineer.base;
 
+import com.codeborne.selenide.logevents.SelenideLogger;
 import info.testengineer.environment.Environment;
-import info.testengineer.listener.AllureScreenShooter;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.testng.annotations.*;
 
 import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
@@ -13,7 +14,7 @@ import static info.testengineer.webconfig.WebConfig.BASE_CONFIG;
 /**
  * The type Base web.
  */
-@Listeners(AllureScreenShooter.class)
+
 public class BaseWeb {
 
     /**
@@ -23,6 +24,14 @@ public class BaseWeb {
         super();
         //empty
         return;
+    }
+
+    /**
+     * The method init. This method created for added listener. This listener for Allure.
+     */
+    @BeforeSuite
+    public void initLogger() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true));
     }
 
     /**
