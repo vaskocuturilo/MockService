@@ -60,6 +60,7 @@ public class ContactPage extends UserData {
      * Method add Contact Information.
      *
      * @param registerData this is string name of json file.
+     * @return this.
      */
     public ContactPage addContactInformation(final String registerData) {
         final UserData userData = getJsonData(registerData);

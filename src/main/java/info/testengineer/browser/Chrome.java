@@ -31,6 +31,11 @@ public class Chrome implements WebDriverProvider {
         return;
     }
 
+    /**
+     * The method createDriver.
+     *
+     * @param capabilities this is capabilities for ChromeOptions.
+     */
     @SuppressWarnings("deprecation")
     @Override
     public WebDriver createDriver(final DesiredCapabilities capabilities) {
