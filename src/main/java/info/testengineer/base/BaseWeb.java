@@ -28,9 +28,11 @@ public class BaseWeb {
 
     /**
      * The method init. This method created for added listener. This listener for Allure.
+     * screenshots(true) for attach screen.
      */
     @BeforeSuite
     public void initLogger() {
+
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true));
     }
 
