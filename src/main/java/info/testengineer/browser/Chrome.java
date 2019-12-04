@@ -36,14 +36,12 @@ public class Chrome implements WebDriverProvider {
      *
      * @param capabilities this is capabilities for ChromeOptions.
      */
-    @SuppressWarnings("deprecation")
     @Override
     public WebDriver createDriver(final DesiredCapabilities capabilities) {
         WebDriverManager.chromedriver().setup();
         capabilities.setCapability(ChromeOptions.CAPABILITY, getChromeOptions());
-
         try {
-            return new ChromeDriver(capabilities);
+            return new ChromeDriver(getChromeOptions());
         } catch (Exception ex) {
 
             LOG.info(String.valueOf(ex));
