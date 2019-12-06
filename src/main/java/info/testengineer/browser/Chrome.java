@@ -43,7 +43,6 @@ public class Chrome implements WebDriverProvider {
         try {
             return new ChromeDriver(getChromeOptions());
         } catch (Exception ex) {
-
             LOG.info(String.valueOf(ex));
         }
         return null;

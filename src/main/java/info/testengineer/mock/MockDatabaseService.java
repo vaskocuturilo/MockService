@@ -1,6 +1,7 @@
 package info.testengineer.mock;
 
 import org.h2.tools.RunScript;
+import org.h2.tools.Server;
 
 import java.io.File;
 import java.io.FileReader;
@@ -14,6 +15,11 @@ import java.util.logging.Logger;
  * The type Mock database service.
  */
 public final class MockDatabaseService {
+
+    /**
+     * The constant LOGGER.
+     */
+    private static final Logger LOGGER = Logger.getLogger(MockDatabaseService.class.getName());
 
     /**
      * The constant BASE_DRIVER.
@@ -47,6 +53,18 @@ public final class MockDatabaseService {
         super();
         //empty
         return;
+    }
+
+    /**
+     * Tne method startServer. This method for run H2 Database.
+     */
+    public static void startServer() {
+        try {
+            Server server = Server.createTcpServer();
+            server.start();
+        } catch (SQLException ex) {
+            LOGGER.warning(" Server not run" + ex);
+        }
     }
 
     /**

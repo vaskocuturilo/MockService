@@ -5,8 +5,7 @@ import org.testng.annotations.BeforeSuite;
 
 import java.sql.SQLException;
 
-import static info.testengineer.mock.MockDatabaseService.createTable;
-import static info.testengineer.mock.MockDatabaseService.deleteTable;
+import static info.testengineer.mock.MockDatabaseService.*;
 
 
 /**
@@ -28,8 +27,9 @@ public class BaseDatabase {
      *
      * @throws SQLException for method.
      */
-    @BeforeSuite(enabled = false)
+    @BeforeSuite(alwaysRun = true)
     public void beforeTest() throws SQLException {
+        startServer();
         createTable();
 
 
@@ -40,7 +40,7 @@ public class BaseDatabase {
      *
      * @throws SQLException for method.
      */
-    @AfterSuite(alwaysRun = true, enabled = false)
+    @AfterSuite(alwaysRun = true)
     public void afterTest() throws SQLException {
         deleteTable();
     }
