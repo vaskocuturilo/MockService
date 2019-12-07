@@ -1,9 +1,9 @@
  drop table IF EXISTS `WORKERS`;
- create TABLE WORKERS(employeeid int auto_increment primary key,
+ create TABLE WORKERS(id int(11) NOT NULL,
                firstname varchar(100), 
                lastname varchar(100), 
                department varchar(100),
                location varchar(10));
 
-INSERT INTO WORKERS(firstname, lastname, department, location)
-           VALUES ('Vasko', 'Cuturilo','Automation','Poland');
+insert into WORKERS (id, firstname, lastname,department,location)
+values (1, 'Vasko', 'Cuturilo', 'IT', 'POLAND');
