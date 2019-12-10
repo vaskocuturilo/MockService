@@ -13,12 +13,19 @@ import static info.testengineer.mock.MockDatabaseService.*;
 
 
 /**
- * The type Base database.
+ * The class Base database.
  */
 public class BaseDatabase {
 
-    protected static EntityManagerFactory emf;
-    protected static EntityManager em;
+    /**
+     * The private static value EntityManagerFactory.
+     */
+    private static EntityManagerFactory managerFactory;
+
+    /**
+     * The private static value EntityManager.
+     */
+    private static EntityManager entityManager;
 
     /**
      * Default constructor.
@@ -29,10 +36,13 @@ public class BaseDatabase {
         return;
     }
 
+    /**
+     * The method .
+     */
     @BeforeClass
-    public static void init() {
-        emf = Persistence.createEntityManagerFactory("DBUnitExecution");
-        em = emf.createEntityManager();
+    public static void initDBUnitExecution() {
+        managerFactory = Persistence.createEntityManagerFactory("DBUnitExecution");
+        entityManager = managerFactory.createEntityManager();
 
     }
 
@@ -55,8 +65,8 @@ public class BaseDatabase {
     @AfterSuite(alwaysRun = true)
     public void afterTest() throws SQLException {
         deleteTable();
-        em.clear();
-        em.close();
-        emf.close();
+        entityManager.clear();
+        entityManager.close();
+        managerFactory.close();
     }
 }

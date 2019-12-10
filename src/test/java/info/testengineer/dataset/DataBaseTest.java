@@ -10,27 +10,30 @@ import static org.testng.AssertJUnit.assertEquals;
 
 public class DataBaseTest extends BaseDatabase {
 
-    private WorkersService service = new WorkersService();
+    private WorkersService workersService = new WorkersService();
 
     @Test
     public void testCheckInformation() {
-        Workers expectedWorkers = service.get(1);
+        Workers expectedWorkers = workersService.get(1);
         Assert.assertNotNull(expectedWorkers);
     }
 
     @Test
     public void testGetAllPositions() throws Exception {
-        List<Workers> workers = service.getAll();
+        List<Workers> workers = workersService.getAll();
         assertEquals(1, workers.size());
     }
 
     @Test
     public void testDeleteData() {
-        Workers worker = em.find(Workers.class, 1);
-        em.getTransaction().begin();
-        em.remove(worker);
-        em.getTransaction().commit();
-        List<Workers> workers = em.createNamedQuery("Workers.getAll", Workers.class).getResultList();
+        Workers newWorkers = new Workers();
+        newWorkers.setId(2);
+        newWorkers.setFirstName("Test");
+        newWorkers.setLastName("Test");
+        newWorkers.setDepartment("Test");
+        newWorkers.setLocation("Test");
+        workersService.delete(newWorkers);
+        List<Workers> workers = workersService.getAll();
         assertEquals(0, workers.size());
     }
 }

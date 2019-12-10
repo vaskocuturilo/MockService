@@ -2,10 +2,10 @@ package info.testengineer.pages;
 
 import lombok.Getter;
 
-@Getter
 /**
  * The class User data.
  */
+@Getter
 public class UserData {
 
     /**

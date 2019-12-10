@@ -27,7 +27,7 @@ public class BaseWeb {
     }
 
     /**
-     * The method init. This method created for added listener. This listener for Allure.
+     * The method initDBUnitExecution. This method created for added listener. This listener for Allure.
      * screenshots(true) for attach screen.
      */
     @BeforeSuite

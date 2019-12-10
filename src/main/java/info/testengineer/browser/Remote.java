@@ -20,8 +20,11 @@ public class Remote implements WebDriverProvider {
      */
     private static final Logger LOGGER = Logger.getLogger(Remote.class.getName());
 
+    /**
+     * The method createDriver.
+     */
     @Override
-    public WebDriver createDriver(DesiredCapabilities capabilities) {
+    public WebDriver createDriver(final DesiredCapabilities capabilities) {
 
         capabilities.setBrowserName("chrome");
         capabilities.setCapability("enableVNC", true);
@@ -37,7 +40,9 @@ public class Remote implements WebDriverProvider {
     }
 
     /**
-     * The private method for run Grid .
+     * The private method for run Grid.
+     *
+     * @return hostURL.
      */
     private static URL getSelenoidUrl() {
         URL hostURL = null;

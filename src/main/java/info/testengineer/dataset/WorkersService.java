@@ -9,7 +9,11 @@ import java.util.List;
  * The class Workers service.
  */
 public class WorkersService {
-    private EntityManager em = Persistence.createEntityManagerFactory("DBUnitExecution").createEntityManager();
+
+    /**
+     * The private value entityManager.
+     */
+    private EntityManager entityManager = Persistence.createEntityManagerFactory("DBUnitExecution").createEntityManager();
 
     /**
      * Gets all.
@@ -17,7 +21,7 @@ public class WorkersService {
      * @return the all
      */
     public List<Workers> getAll() {
-        TypedQuery<Workers> namedQuery = em.createNamedQuery("Workers.getAll", Workers.class);
+        TypedQuery<Workers> namedQuery = entityManager.createNamedQuery("Workers.getAll", Workers.class);
 
         return namedQuery.getResultList();
     }
@@ -29,8 +33,18 @@ public class WorkersService {
      * @return the workers
      */
     public Workers get(int id) {
-        return em.find(Workers.class, id);
+        return entityManager.find(Workers.class, id);
     }
 
 
+    /**
+     * Delete.
+     *
+     * @param workers the workers
+     */
+    public void delete(Workers workers) {
+        entityManager.getTransaction().begin();
+        entityManager.remove(workers);
+        entityManager.getTransaction().commit();
+    }
 }

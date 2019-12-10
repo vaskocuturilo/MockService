@@ -12,12 +12,32 @@ import javax.persistence.*;
 })
 public class Workers {
 
+
+    /**
+     * The private value id.
+     */
     @Id
     @GeneratedValue
     private int id;
+
+    /**
+     * The private value firstName.
+     */
     private String firstName;
+
+    /**
+     * The private value lastName.
+     */
     private String lastName;
+
+    /**
+     * The private value department.
+     */
     private String department;
+
+    /**
+     * The private value location.
+     */
     private String location;
 
     /**
