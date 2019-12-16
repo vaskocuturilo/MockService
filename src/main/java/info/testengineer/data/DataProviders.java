@@ -51,6 +51,4 @@ public final class DataProviders {
                 {"Anton Smirnov", "Hello world Street", "12345", "test@test.com"}
         };
     }
-
-
 }

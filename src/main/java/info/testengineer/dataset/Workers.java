@@ -55,7 +55,7 @@ public class Workers {
      * @param department the department
      * @param location   the location
      */
-    public Workers(int id, String firstName, String lastName, String department, String location) {
+    public Workers(final int id, final String firstName, final String lastName, final String department, final String location) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
