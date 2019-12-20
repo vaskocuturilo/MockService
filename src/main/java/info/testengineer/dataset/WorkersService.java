@@ -32,7 +32,7 @@ public class WorkersService {
      * @param id the id
      * @return the workers
      */
-    public Workers get(int id) {
+    public Workers get(final int id) {
         return entityManager.find(Workers.class, id);
     }
 
@@ -42,7 +42,7 @@ public class WorkersService {
      *
      * @param workers the workers
      */
-    public void delete(Workers workers) {
+    public void delete(final Workers workers) {
         entityManager.getTransaction().begin();
         entityManager.remove(workers);
         entityManager.getTransaction().commit();
