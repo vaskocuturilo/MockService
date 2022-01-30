@@ -1,7 +1,8 @@
 ## Test scenario:
-- 
-- 
--  
+- Add automation scripts ror API
+- Add automation scripts for Database
+- Add automation scripts for Email
+- Add automation scripts for Web
     
 ## Requirements:
 - Use any *object-oriented language* (Java or Kotlin).
